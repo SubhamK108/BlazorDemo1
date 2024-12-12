@@ -1,0 +1,15 @@
+.sortable-column {
+    cursor: pointer;
+}
+
+    .sortable-column:hover {
+        color: darkgray;
+    }
+
+.show-sorted-sign {
+    color: inherit;
+}
+
+.hide-sorted-sign {
+    color: transparent;
+}

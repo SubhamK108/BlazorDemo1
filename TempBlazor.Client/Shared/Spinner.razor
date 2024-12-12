@@ -1,0 +1,24 @@
+@if (Size == Sizes.LARGE)
+{
+    <div class="spinner">
+        <div class="spinner-large">
+        </div>
+    </div>
+}
+@if (Size == Sizes.SMALL)
+{
+    <div class="spinner">
+      <div class="spinner-small">
+      </div>
+    </div>
+}
+
+@code {
+    [Parameter] public Sizes Size { get; set; }
+
+    public enum Sizes
+    {
+        SMALL,
+        LARGE
+    }
+}

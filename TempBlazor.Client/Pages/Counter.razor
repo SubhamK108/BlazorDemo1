@@ -5,17 +5,29 @@
 
 <h1>Counter</h1>
 
-<p role="status">Current count: @currentCount</p>
+<p role="status">Current count: @_currentCount</p>
 
-<button class="btn btn-primary rounded-pill" @onclick="IncrementCount">
-    Click me
-</button>
+<div style="display: flex; column-gap: 10px;">
+    <button class="btn btn-success rounded-pill" @onclick="@IncrementCount">
+        @* Increase *@
+        <Icon IconType="Icon.IconTypes.ADD" />
+    </button>
+    <button class="btn btn-danger rounded-pill" @onclick="@DecrementCount">
+        @* Decrease *@
+        <Icon IconType="Icon.IconTypes.MINUS" />
+    </button>
+    <button class="btn btn-secondary rounded-pill" @onclick="@ResetCount">
+        @* Reset *@
+        <Icon IconType="Icon.IconTypes.REDO" />
+    </button>
+</div>
 
 @code {
-    private int currentCount = 0;
+    private int _currentCount = 0;
 
-    private void IncrementCount()
-    {
-        currentCount++;
-    }
+    private void IncrementCount() => _currentCount++;
+
+    private void DecrementCount() => _currentCount--;
+
+    private void ResetCount() => _currentCount = 0;
 }
